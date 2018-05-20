@@ -1,1 +1,1 @@
-include ':app', ':baselibs', ':basecomponent', ':basedragger2'
+include ':app', ':baselibs', ':basecomponent'
