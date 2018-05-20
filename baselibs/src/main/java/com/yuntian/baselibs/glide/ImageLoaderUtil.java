@@ -29,12 +29,18 @@ public class ImageLoaderUtil {
 
     private static final String TAG = ImageLoaderUtil.class.getSimpleName();
 
-    private static final int PLACEHOLDER_DEFAULT = R.drawable.default_image_loading;
+    private static int PLACEHOLDER_DEFAULT = R.drawable.default_image_loading;
 
 
     public static void initImageLoader(Context context) {
         mContext = context.getApplicationContext();
     }
+
+    public static void initImageLoader(Context context,int defaultImage) {
+        mContext = context.getApplicationContext();
+        PLACEHOLDER_DEFAULT=defaultImage;
+    }
+
 
 
     /**

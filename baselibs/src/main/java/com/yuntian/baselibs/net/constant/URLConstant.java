@@ -11,13 +11,13 @@ public class URLConstant {
 
     public static String DEV_URL = "";
 
-    public static String TEST_URL = "https://yuntian.com";
+    public static String TEST_URL = "http://gank.io/";
 
     public static String STG_URL = "https://yuntian.com";
 
     public static String PRO_URL = "https://yuntian.com";
 
-    public static String BASE_URL = "";
+    public static String BASE_URL = "http://gank.io/";
 
 
     static {

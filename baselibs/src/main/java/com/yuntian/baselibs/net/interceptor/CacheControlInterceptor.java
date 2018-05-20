@@ -1,9 +1,7 @@
 package com.yuntian.baselibs.net.interceptor;
 
-import android.text.TextUtils;
-
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.NetworkUtils;
-import com.yuntian.baselibs.net.cache.CacheStrategy;
 
 import java.io.IOException;
 
@@ -11,6 +9,8 @@ import okhttp3.CacheControl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import static com.yuntian.baselibs.net.cache.CacheStrategy.CACHE_CONTROL_CACHE;
 
 /**
  * description 缓存拦截器.
@@ -25,8 +25,9 @@ public class CacheControlInterceptor implements Interceptor {
         String cacheControl = request.cacheControl().toString();
         if (!NetworkUtils.isConnected()) {
             request = request.newBuilder()
-                    .cacheControl(TextUtils.isEmpty(cacheControl)? CacheControl.FORCE_NETWORK: CacheControl.FORCE_CACHE)
+                    .cacheControl(CacheControl.FORCE_CACHE)
                     .build();
+            LogUtils.d("not netWork");
         }
         Response originalResponse = chain.proceed(request);
         if (NetworkUtils.isConnected()) {
@@ -37,9 +38,12 @@ public class CacheControlInterceptor implements Interceptor {
                     .build();
         } else {
             return originalResponse.newBuilder()
-                    .header("Cache-Control", "public, only-if-cached, max-stale=" + CacheStrategy.CACHE_STALE_SEC)
+                    .header("Cache-Control", "public," + CACHE_CONTROL_CACHE)
                     .removeHeader("Pragma")
                     .build();
         }
     }
+
+
+
 }
