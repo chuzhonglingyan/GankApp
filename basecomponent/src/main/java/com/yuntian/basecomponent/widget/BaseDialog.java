@@ -44,8 +44,8 @@ public abstract class BaseDialog extends Dialog {
         WindowManager.LayoutParams params = window.getAttributes();
 
         DisplayMetrics d = mContext.getResources().getDisplayMetrics(); // 获取屏幕宽、高用
-        params.height = WindowManager.LayoutParams.WRAP_CONTENT;
         params.width =d.widthPixels; // 宽度设置为屏幕的0.8
+        params.height = WindowManager.LayoutParams.WRAP_CONTENT;
         //设置dialog的位置在底部
         params.gravity = getGravity();
         window.setAttributes(params);

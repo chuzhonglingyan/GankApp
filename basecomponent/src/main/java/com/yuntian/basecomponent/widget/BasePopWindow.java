@@ -9,10 +9,12 @@ import android.view.ViewGroup;
 import android.widget.PopupWindow;
 
 
+
 /**
- * @author guangleilei
- * @version 1.0 2017-05-12
+ * description Pop问题很多，建议不再使用.
+ * Created by ChuYingYan on 2018/5/20.
  */
+@Deprecated
 public abstract class BasePopWindow extends PopupWindow {
 
     protected View popView;
