@@ -33,7 +33,7 @@ task clean(type: Delete) {
 
 ext {
 
-    applicationId="com.yuntian.gankapp"
+    applicationId="com.yuntian.ganka0pp"
     minSdkVersion = 16
     targetSdkVersion = 21
     compileSdkVersion = 27

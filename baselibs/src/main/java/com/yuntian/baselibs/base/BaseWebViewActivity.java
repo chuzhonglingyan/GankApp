@@ -44,10 +44,7 @@ public  abstract class BaseWebViewActivity extends BaseActivity {
         rooView = new LinearLayout(this);
         rooView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         mWebView = new WebView(this);
-
         rooView.addView(mWebView);
-
-        initWebViewSetting();
     }
 
 
@@ -59,10 +56,11 @@ public  abstract class BaseWebViewActivity extends BaseActivity {
     @Override
     protected void initView() {
         setContentView(rooView);
+        initWebViewSetting();
     }
 
 
-    private void initWebViewSetting() {
+    protected void initWebViewSetting() {
         mWebView.removeJavascriptInterface("searchBoxjavaBridge_");//解决 CVE-2014-1939 漏洞
         mWebView.removeJavascriptInterface("accessibility");//解决  CVE-2014-7224  漏洞
         mWebView.removeJavascriptInterface("accessibilityTraversal");//解决  CVE-2014-7224  漏洞
