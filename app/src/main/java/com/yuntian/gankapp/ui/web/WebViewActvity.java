@@ -11,6 +11,7 @@ import com.blankj.utilcode.util.LogUtils;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.yuntian.basecomponent.ui.BaseRefreshWebViewActivity;
 import com.yuntian.basecomponent.util.ToolBarUtil;
+import com.yuntian.gankapp.R;
 import com.yuntian.gankapp.route.RoutePaths;
 
 /**
@@ -30,6 +31,8 @@ public class WebViewActvity extends BaseRefreshWebViewActivity {
 
     @Override
     protected void initData(Bundle savedInstanceState) {
+
+        toolBar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         ToolBarUtil.initToolBar(mActivity, toolBar, true, title);
        // mWebView.loadUrl(url);
         smartRefreshLayout.autoRefresh();

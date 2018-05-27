@@ -170,6 +170,30 @@ public class BaseFPageAdapter extends FragmentPagerAdapter {
         notifyDataSetChanged();
     }
 
+    /**
+     * 刷新fragment
+     *
+     * @param fm
+     * @param fragments
+     * @param mTitles
+     */
+    public void updateFragments(FragmentManager fm, List<Fragment> fragments, String[] mTitles) {
+        if (data != null && data.size() > 0) {
+            FragmentTransaction ft = fm.beginTransaction();  //移除之前所有的Fragment
+            for (Fragment f : data) {
+                ft.remove(f);
+            }
+            ft.commitAllowingStateLoss();
+            fm.executePendingTransactions();
+            titles.clear();
+            data.clear();
+        }
+        titles.addAll(toList(mTitles));
+        data.addAll(fragments);
+        notifyDataSetChanged();
+    }
+
+
 
     public void swapItems(int fromPos, int toPos) {
         Collections.swap(titles, fromPos, toPos);

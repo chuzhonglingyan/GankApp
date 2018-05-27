@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 
 import com.yuntian.basecomponent.dragger.AppComponent;
 import com.yuntian.basecomponent.util.ToolBarUtil;
-import com.yuntian.baselibs.adapter.BaseFPageStateAdapter;
+import com.yuntian.baselibs.adapter.BaseFPageAdapter;
 import com.yuntian.baselibs.util.FragmentHelper;
 import com.yuntian.gankapp.R;
 import com.yuntian.gankapp.databinding.FragmentGankMainBinding;
@@ -32,7 +32,7 @@ public class GankMainFragment extends GankViewFragment<FragmentGankMainBinding, 
 
 
     @Inject
-    BaseFPageStateAdapter baseFPageStateAdapter;
+    BaseFPageAdapter baseFPageAdapter;
 
 
     public static final String TAG = "GankMainFragment";
@@ -66,8 +66,8 @@ public class GankMainFragment extends GankViewFragment<FragmentGankMainBinding, 
         fragments.add(FragmentHelper.newInstance(WelfareListFragment.class, bundlearWelfare));
         fragments.add(FragmentHelper.newInstance(RestListFragment.class, bundleRest));
 
-        baseFPageStateAdapter.updateFragments(getChildFragmentManager(), fragments, new String[]{"技术文章", "福利生活", "休息视频"});
-        mViewBinding.viewPager.setAdapter(baseFPageStateAdapter);
+        baseFPageAdapter.updateFragments(getChildFragmentManager(), fragments, new String[]{"技术文章", "福利生活", "休息视频"});
+        mViewBinding.viewPager.setAdapter(baseFPageAdapter);
         mViewBinding.tabLayout.setupWithViewPager(mViewBinding.viewPager);
     }
 

@@ -11,7 +11,7 @@ import com.blankj.utilcode.util.SizeUtils;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.yuntian.baselibs.R;
+import com.yuntian.basecomponent.R;
 import com.yuntian.baselibs.base.BaseWebViewActivity;
 
 
@@ -43,7 +43,6 @@ public abstract class BaseRefreshWebViewActivity extends BaseWebViewActivity imp
     public void  initToolBar(){
         toolBar = new Toolbar(this);
         toolBar.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, SizeUtils.dp2px(50)));
-        toolBar.setBackgroundColor(getResources().getColor(R.color.blue_check));
         toolBar.setTitleTextColor(Color.WHITE);
         toolBar.setMinimumHeight(SizeUtils.dp2px(50));
         toolBar.setNavigationIcon(R.mipmap.icon_back);
@@ -60,7 +59,6 @@ public abstract class BaseRefreshWebViewActivity extends BaseWebViewActivity imp
     public void  initSmartRefreshLayout(){
         smartRefreshLayout = new SmartRefreshLayout(this);
         smartRefreshLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        smartRefreshLayout.setPrimaryColorsId(android.R.color.holo_blue_light, android.R.color.white);
         smartRefreshLayout.setRefreshHeader(new ClassicsHeader(this));
         smartRefreshLayout.setEnableLoadMore(false);
 
