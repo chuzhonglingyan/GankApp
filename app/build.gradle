@@ -58,4 +58,5 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.dagger}"
 
     implementation project(path: ':basecomponent')
+
 }
